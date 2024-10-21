@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #fdf9ff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  @apply bg-blue-100;
+}
+.shadow {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+  z-index: 9;
+}
+.shadow-none {
+  box-shadow: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-item,
+.navbar {
+  z-index: 10000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.e-dlg-center-center,
+.e-quick-popup-wrapper.e-device {
+  z-index: 1000000 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  border-width: 1px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* .e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+  border: none;
+} */
+
+.e-frame {
+  border-radius: 35% !important;
+}
+.e-control {
+  border-radius: 15px !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.parent .item:first-child h1 {
+  color: red;
+}
+.apexcharts-toolbar {
+  display: none !important;
+}
+
+.side {
+  width: 270px !important;
+  z-index: 99;
+}
+.content {
+  width: calc(100% - 270px) !important;
+}
+
+@media (max-width: 1100px) {
+  .side {
+    width: 240px !important;
+  }
+  .content {
+    width: calc(100% - 240px) !important;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 991px) {
+  .content {
+    width: 100% !important;
   }
-  to {
-    transform: rotate(360deg);
+  .side {
+    width: 260px !important;
   }
 }
