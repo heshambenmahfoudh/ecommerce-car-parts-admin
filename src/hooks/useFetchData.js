@@ -10,8 +10,8 @@ const useFetchData = (url) => {
     const fetch = async () => {
       setLoading(true)
       try {
-        const res = await axios.get(url)
-        setData(res.data.data)
+        const res = await axios.get(process.env.REACT_APP_BASE_URL + url)
+        setData(res?.data?.data)
       } catch (err) {
         setErr(true)
       }
@@ -23,8 +23,8 @@ const useFetchData = (url) => {
   const reFetchData = async () => {
     setLoading(true)
     try {
-      const res = await axios.get(url)
-      setData(res.data)
+      const res = await axios.get(process.env.REACT_APP_BASE_URL+url)
+      setData(res?.data)
     } catch (err) {
       setErr(true)
     }

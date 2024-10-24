@@ -5,7 +5,7 @@ import { useStateContext } from '../contexts/ContextProvider.js'
 import useFetchData from '../hooks/useFetchData'
 import { format } from 'timeago.js'
 import {Link} from "react-router-dom"
-import avatar3 from '../data/avatar3.png'
+import avatar3 from '../data/images/avatar3.png'
 
 const Messages = () => {
   const { message, setMessage } = useStateContext()

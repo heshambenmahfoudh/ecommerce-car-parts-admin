@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Buttons from '../Components/Forms/Buttons'
 import Inputs from '../Components/Forms/Inputs'
 import Lables from '../Components/Forms/Lables'
 import { useStateContextAuth } from '../contexts/AuthContext'
 import { ApiLoginAdmin } from '../Lib/apiRequest'
 const Login = ({ setConvert }) => {
-  const [informations, setInformations] = React.useState()
+  const [informations, setInformations] = useState()
   const { loading, err, dispatch } = useStateContextAuth()
 
   const changeData = (e) => {

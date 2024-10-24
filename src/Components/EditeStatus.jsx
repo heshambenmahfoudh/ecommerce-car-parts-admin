@@ -5,7 +5,6 @@ import { statusOptions } from '../data/dummy'
 import useFetchData from '../hooks/useFetchData'
 import { ApiPutRequest } from '../Lib/apiRequest'
 import Buttons from './Forms/Buttons'
-import Inputs from './Forms/Inputs'
 import Lables from './Forms/Lables'
 import SelectInput from './Forms/SelectInput'
 

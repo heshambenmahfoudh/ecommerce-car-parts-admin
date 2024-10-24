@@ -1,7 +1,8 @@
 import React from 'react'
 import useFetchData from '../hooks/useFetchData'
-import avatar from "../../src/data/avatar.jpg"
+import avatar from "../data/images/avatar.jpg"
 import Loading from './Loading'
+import StatusData from './StatusData'
 
 const LastUserJoin = () => {
     const { data:users, loading } = useFetchData(`/users?admin=false&limit=4`)
@@ -64,15 +65,8 @@ const LastUserJoin = () => {
                   </p>
                 </div>
               ))}
-        {users?.length <= 0 && (
-            <div
-              className=" p-6 text-center text-18 
-            gap-2 bg-white 
-            "
-            >
-              No Last User Join herer
-            </div>
-          )} </>
+      <StatusData list={users} resourceName={'Users'} size={{}} />
+           </>
      </div>
     </>
   )

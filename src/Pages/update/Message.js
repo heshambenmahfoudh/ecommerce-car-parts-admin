@@ -22,22 +22,6 @@ const Message = () => {
         <div className="p-10 smd:p-7 ssm:p-5 smss:p-3 mx-auto mt-4 rounded-md
        bg-white shadow-md border-1 max-w-4xl">
           <div className="flex flex-col w-full gap-2">
-            {/* <div className="flex justify-between ssm:flex-col gap-4 ssm:items-start items-center">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="w-full text-15 bold
-                  rounded-lg p-2  outline-none border-1 focus:bg-blue-100"
-                value={message?.userId?.firstname}
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className=" w-full text-15 bold
-                rounded-lg p-2  outline-none border-1 focus:bg-blue-100"
-                value={message?.userId?.lastname}
-              />
-            </div>  */}
             <div className="flex items-center ssm:flex-col gap-5 ssm:gap-1">
               <div className="w-full">
                 <Lables text="First Name" />

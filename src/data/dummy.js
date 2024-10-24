@@ -4,7 +4,6 @@ import {
   AiOutlineShoppingCart,
   AiOutlineSetting,
   AiOutlineCar,
-  AiFillProfile,
   AiOutlineProfile,
 } from 'react-icons/ai'
 import { FiShoppingBag } from 'react-icons/fi'
@@ -13,7 +12,7 @@ import { RiContactsLine, RiProductHuntLine, RiAdminLine } from 'react-icons/ri'
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md'
 import { SiGoogleanalytics } from 'react-icons/si'
 import { SlPeople } from 'react-icons/sl'
-import earning from './earning.svg'
+import earning from './images/earning.svg'
 
 export const DataHomeOne = [
   {

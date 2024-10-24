@@ -21,7 +21,7 @@ const Sidebar = () => {
     "
       >
         <div className="mb-4 w-auto flex items-center justify-between  ">
-          <h2 className="bold    text-xl">Arab store</h2>
+          <h2 className="bold    text-xl">Ecomerce Car Parts</h2>
           <span
             className="text-xl cursor-pointer lg:hidden block"
             onClick={() => setActiveMenu((prev) => !prev)}
@@ -29,21 +29,21 @@ const Sidebar = () => {
             <MdOutlineCancel />
           </span>
         </div>
-        {links.map((item) => (
-          <div key={item.title}>
+        {links?.map((item) => (
+          <div key={item?.title}>
             <p className="text-gray-40 text-14 text-gray-400 mt-10 mb-3 uppercase">
-              {item.title}
+              {item?.title}
             </p>
-            {item.links.map((item) => (
+            {item?.links.map((item) => (
               <NavLink
-                key={item.name}
-                to={`/${item.name.toLocaleLowerCase()}`}
+                key={item?.name}
+                to={`/${item?.name.toLocaleLowerCase()}`}
                 className={({ isActive }) =>
                   isActive ? activeLink : normalLink
                 }
               >
-                <span className="capitalize">{item.icon}</span>
-                {item.name}
+                <span className="capitalize">{item?.icon}</span>
+                {item?.name}
               </NavLink>
             ))}
           </div>

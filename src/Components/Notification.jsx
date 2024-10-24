@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from "../data/avatar.jpg"
+import avatar from "../data/images/avatar.jpg"
 import { RiNotification3Line } from 'react-icons/ri'
 import { MdOutlineCancel } from 'react-icons/md'
 import { useStateContext } from '../contexts/ContextProvider.js'

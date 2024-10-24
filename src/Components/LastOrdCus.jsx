@@ -2,7 +2,8 @@ import React from 'react'
 import useFetchData from '../hooks/useFetchData'
 import Loading from './Loading'
 
-import avatar from "../../src/data/avatar.jpg"
+import avatar from "../data/images/avatar.jpg"
+import StatusData from './StatusData'
 const LastOrdCus = () => {
  const { data:orders, loading } = useFetchData(`/orders?limit=5`)
 
@@ -96,16 +97,8 @@ const LastOrdCus = () => {
                   </p>
                 </div>
               ))}
+   <StatusData list={orders} resourceName={'Orders'} size={654} />
 
-              {orders?.length <= 0 && (
-            <div
-              className=" p-6 text-center text-18 
-            gap-2 bg-white 
-            "
-            >
-              No Last Orders herer
-            </div>
-          )}
               </>
         </div>
      </div>

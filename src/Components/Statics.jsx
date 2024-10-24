@@ -3,7 +3,7 @@ import { BsCurrencyDollar} from 'react-icons/bs'
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md'
 import { SiGoogleanalytics } from 'react-icons/si'
 import { SlPeople } from 'react-icons/sl'
-import earningPhoto from '../../src/data/earning.svg'
+import earningPhoto from '../data/images/earning.svg'
 import useFetchData from '../hooks/useFetchData'
 
 const Statics = () => {
@@ -67,7 +67,7 @@ const { data: orders } = useFetchData(`/orders`)
             </span>
             <h3 className="font-bold text-[14px]">Total Order</h3>
             <div className='flex justify-between items-center'>
-                <h1 className="font-bold text-2xl mb-2 ">{orders.length} </h1>
+                <h1 className="font-bold text-2xl mb-2 ">{orders?.length} </h1>
               
             </div>
             <small className="text-[#110d0e8c] text-[13px]"> 
@@ -84,7 +84,7 @@ const { data: orders } = useFetchData(`/orders`)
             </span>
             <h3 className="font-bold text-[14px]">Total Users</h3>
             <div className='flex justify-between items-center'>
-                <h1 className="font-bold text-2xl mb-2 ">{users.length} </h1>
+                <h1 className="font-bold text-2xl mb-2 ">{users?.length} </h1>
             </div>
             <small className="text-[#110d0e8c] text-[13px]"> 
              Compare with last month</small>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiSettings } from 'react-icons/fi'
 import { MdOutlineCancel, MdOutlineLogout } from 'react-icons/md'
-import avatar from '../data/avatar.jpg'
+import avatar from '../data/images/avatar.jpg'
 import { RiEmpathizeLine } from 'react-icons/ri'
 import { useStateContext } from '../contexts/ContextProvider.js'
 import { useStateContextAuth } from '../contexts/AuthContext'

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import FormHeader from '../../Components/Headers/FormHeader'
@@ -71,7 +70,7 @@ const NewProduct = ({ id, productData }) => {
 
   //  delete options odel and price
   const deleteOption = (model) => {
-    setOptions(options?.filter((option) => option.model !== model))
+    setOptions(options?.filter((option) => option?.model !== model))
   }
 
   // send data into dataase
@@ -79,7 +78,7 @@ const NewProduct = ({ id, productData }) => {
     const data = {
       ...information,
       img: image,
-      options: options.map((item) => ({
+      options: options?.map((item) => ({
         model: item?.model,
         price: item?.price,
       })),
@@ -112,7 +111,7 @@ const NewProduct = ({ id, productData }) => {
     return <Navigate to={rederect} />
   }
 
-  console.log('information dd :', information?.category)
+  
 
   return (
     <div>
@@ -218,7 +217,7 @@ const NewProduct = ({ id, productData }) => {
               {options?.map((item, i) => (
                 <article
                   className="p-2 bg-blue-300 flex justify-between items-center rounded-lg cursor-pointer"
-                  onClick={() => deleteOption(item.model)}
+                  onClick={() => deleteOption(item?.model)}
                   key={i}
                 >
                   <span className="text-16 capitalize ">

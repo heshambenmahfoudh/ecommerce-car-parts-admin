@@ -10,7 +10,6 @@ import useFetchData from '../../hooks/useFetchData'
 
 const NewCategory = ({ id, categoryData }) => {
   const [information, setInformtion] = useState()
-  const [selectImage, setSelectImage] = useState(null)
   const [rederect, setRederect] = useState('')
   const [err, setErr] = useState('')
   const [loading, setLoading] = useState(false)
@@ -19,7 +18,6 @@ const NewCategory = ({ id, categoryData }) => {
   useEffect(() => {
     if (id) {
       setInformtion(categoryData)
-      setSelectImage(categoryData?.img?.[0])
     }
   }, [categoryData, id])
 

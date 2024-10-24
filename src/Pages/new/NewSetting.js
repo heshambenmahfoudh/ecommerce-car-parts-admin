@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import useFetchData from '../../hooks/useFetchData'
 import Lables from '../../Components/Forms/Lables'
 import Inputs from '../../Components/Forms/Inputs'
@@ -7,7 +6,11 @@ import TextAria from '../../Components/Forms/TextAria'
 import FormHeader from '../../Components/Headers/FormHeader'
 import Buttons from '../../Components/Forms/Buttons'
 import { Navigate } from 'react-router-dom'
-import { ApiPostImageRequest, ApiPostRequest, ApiPutRequest } from '../../Lib/apiRequest'
+import {
+  ApiPostImageRequest,
+  ApiPostRequest,
+  ApiPutRequest,
+} from '../../Lib/apiRequest'
 import SelectImage from '../../Components/Forms/SelectImage'
 
 const NewSetting = () => {
@@ -31,7 +34,7 @@ const NewSetting = () => {
 
   //  CHANGE DATA IMG
   const changeImage = async (e) => {
-   ApiPostImageRequest('/deploy', e, setImage)
+    ApiPostImageRequest('/deploy', e, setImage)
   }
   //  ADD CATEGORY
   const addedSetting = async (e) => {
@@ -72,7 +75,7 @@ const NewSetting = () => {
       <FormHeader title={id ? 'Update setting' : 'New setting'} user={true} />
       <form className="p-10 smd:p-7 ssm:p-5 smss:p-3 mx-auto mt-4 rounded-md bg-white shadow-md border-1 max-w-4xl">
         <div className="flex justify-between flex-col gap-5">
-         <SelectImage chaneValue={changeImage} img={image} />
+          <SelectImage chaneValue={changeImage} img={image} />
           <div className="flex flex-col gap-1">
             <div className="w-full">
               <Lables text="Setting Title" />

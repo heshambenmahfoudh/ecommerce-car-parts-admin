@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AiFillDelete, AiOutlineEdit } from 'react-icons/ai'
+import { AiOutlineEdit } from 'react-icons/ai'
 import useFetchData from '../hooks/useFetchData'
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'

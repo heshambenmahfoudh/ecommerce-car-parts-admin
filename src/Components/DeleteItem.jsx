@@ -5,7 +5,7 @@ import { ApiDeleteRequest } from '../Lib/apiRequest'
 const DeleteItem = ({id ,endPoint ,resourceName ,list , setList}) => {
      const deletedItem = async (id) => {
     ApiDeleteRequest(endPoint, id, resourceName)
-    setList(list.filter((item) => item._id !== id))
+    setList(list?.filter((item) => item?._id !== id))
   }
   return (
     <div><AiFillDelete

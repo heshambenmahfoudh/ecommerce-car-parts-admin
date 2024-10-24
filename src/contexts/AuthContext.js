@@ -29,7 +29,7 @@ const AuthReducer = (state, action) => {
     case 'UPDATE_START':
       return {
         ...state,
-        admin: state.admin,
+        admin: state?.admin,
         loading: true,
         err: false,
       }
@@ -43,7 +43,7 @@ const AuthReducer = (state, action) => {
     case 'UPDATE_FAIL':
       return {
         ...state,
-        admin: state.admin,
+        admin: state?.admin,
         loading: false,
         err: action.payload,
       }
@@ -57,16 +57,32 @@ const AuthReducer = (state, action) => {
       return state
   }
 }
+
 const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE)
   React.useEffect(() => {
-    localStorage.setItem('admin', JSON.stringify(state.admin))
-  }, [state.admin])
+    const adminData = localStorage.getItem('admin')
+    const admin = {
+      id: state?.admin?._id,
+      firstname: state?.admin?.firstname,
+      lastname: state?.admin?.lastname,
+      username: state?.admin?.username,
+      isAdmin: state?.admin?.isAdmin,
+    }
+
+    try {
+      if (adminData !== undefined) {
+        localStorage.setItem('admin', JSON.stringify(state?.admin || null))
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }, [state?.admin])
 
   return (
     <AuthContext.Provider
       value={{
-        admin: state.admin,
+        admin: state?.admin,
         loading: state.loading,
         err: state.err,
         dispatch,

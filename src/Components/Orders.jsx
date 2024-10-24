@@ -5,13 +5,13 @@ import { useStateContext } from '../contexts/ContextProvider'
 import useFetchData from '../hooks/useFetchData'
 import { MdOutlineCancel } from 'react-icons/md'
 import {Link} from "react-router-dom"
-import avatar from '../data/avatar.jpg'
+import avatar from '../data/images/avatar.jpg'
 
 const Orders = () => {
   const { order, setOrder } = useStateContext()
     const { data: orders } = useFetchData(`orders?limit=${3}`)
     const { data: ordersLenght } = useFetchData(`orders`)
-    console.log('orders ,',orders);
+
   return (
     <div className=" relative  ">
       <span

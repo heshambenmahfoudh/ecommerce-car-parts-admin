@@ -16,7 +16,7 @@ export const ApiPostRequest = async (
   setLoading((prev) => !prev)
 
   try {
-    await axios.post(endPoint, data)
+    await axios.post(process.env.REACT_APP_BASE_URL+endPoint, data)
     setLoading((prev) => !prev)
     toast.success(`${resourceName} Created Successfully`)
   } catch (err) {
@@ -37,7 +37,7 @@ export const ApiPostImageRequest = async (endPoint, e, setImage) => {
     const dataImge = new FormData()
     dataImge.append('photo', file)
     if (file) {
-      const { data } = await axios.post(endPoint, dataImge)
+      const { data } = await axios.post(process.env.REACT_APP_BASE_URL+endPoint, dataImge)
       setImage(data)
       toast.success(`Image Upload Successfully`)
     }
@@ -61,7 +61,7 @@ export const ApiPutRequest = async (
   setLoading((prev) => !prev)
 
   try {
-    await axios.put(endPoint, data)
+    await axios.put(process.env.REACT_APP_BASE_URL + endPoint, data)
     setLoading((prev) => !prev)
     toast.success(`${resourceName} Updated Successfully`)
   } catch (err) {
@@ -79,7 +79,7 @@ export const ApiPutRequest = async (
 
 export const ApiDeleteRequest = async (endPoint, id, resourceName) => {
   try {
-    await axios.delete(`/${endPoint}/${id}`)
+    await axios.delete(`${process.env.REACT_APP_BASE_URL}/${endPoint}/${id}`)
     toast.success(`${resourceName} Deleted Successfully`)
   } catch (err) {}
 }
@@ -88,11 +88,14 @@ export const ApiLoginAdmin = async (e, dispatch, data) => {
   e.preventDefault()
   dispatch({ type: 'AUTH_START' })
   try {
-    const res = await axios.post(`/auth/login?admin=true`, data)
-    dispatch(dispatch({ type: 'AUTH_SUCCESS', payload: res.data.data }))
+    const res = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/auth/login?admin=true`,
+      data,
+    )
+    dispatch(dispatch({ type: 'AUTH_SUCCESS', payload: res?.data?.data }))
     toast.success('User Login Successfully')
   } catch (err) {
-    dispatch({ type: 'AUTH_FAIL', payload: err.response.data })
+    dispatch({ type: 'AUTH_FAIL', payload: err?.response?.data })
     toast.error(err?.response?.data?.message)
   }
 }
@@ -109,11 +112,14 @@ export const ApiPutRequestProfile = async (
 
   dispatch({ type: 'UPDATE_START' })
   try {
-    const res = await axios.put(`/${endPoint}/${id} `, data)
-    dispatch({ type: 'UPDATE_SUCCESS', payload: res.data.data })
+    const res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/${endPoint}/${id} `,
+      data,
+    )
+    dispatch({ type: 'UPDATE_SUCCESS', payload: res?.data?.data })
     toast.success(`${resourceName} Updated Successfully`)
   } catch (err) {
-    toast.success(err.response.data.message)
-    dispatch({ type: 'UPDATE_FAIL', payload: err.response.data.message })
+    toast.success(err?.response?.data?.message)
+    dispatch({ type: 'UPDATE_FAIL', payload: err?.response?.data?.message })
   }
 }

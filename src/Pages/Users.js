@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { format } from 'timeago.js'
-import avatar from '../data/avatar.jpg'
+import avatar from '../data/images/avatar.jpg'
 import useFetchData from '../hooks/useFetchData'
 import Loading from '../Components/Loading'
 import { FixedHeader } from '../Components/Headers/FixedHeader'

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
-import axios from 'axios'
 import Buttons from '../../Components/Forms/Buttons'
 import Lables from '../../Components/Forms/Lables'
 import Inputs from '../../Components/Forms/Inputs'
 import FormHeader from '../../Components/Headers/FormHeader'
-import { ApiPostImageRequest, ApiPostRequest, ApiPutRequest } from '../../Lib/apiRequest'
+import {
+  ApiPostImageRequest,
+  ApiPostRequest,
+  ApiPutRequest,
+} from '../../Lib/apiRequest'
 import TextAria from '../../Components/Forms/TextAria'
 import SelectImage from '../../Components/Forms/SelectImage'
 
@@ -29,7 +32,7 @@ const NewBrand = ({ id, brandData }) => {
   }
   // take string of img from input
   const changeImage = async (e) => {
-     ApiPostImageRequest('/deploy', e, setImage)
+    ApiPostImageRequest('/deploy', e, setImage)
   }
 
   // added data or update data

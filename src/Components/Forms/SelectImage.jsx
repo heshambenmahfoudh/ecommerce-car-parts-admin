@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineCloudUpload } from 'react-icons/ai'
-import avatar from '../../data/avatar.jpg'
+import avatar from '../../data/images/avatar.jpg'
 
 const SelectImage = ({chaneValue , img}) => {
   return (
